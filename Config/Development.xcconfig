@@ -1,0 +1,10 @@
+// Copy your Supabase project URL and PUBLIC anon/publishable key here.
+// Never place a service_role key in an iPhone app.
+// $() prevents xcconfig from treating // as a comment.
+SUPABASE_URL = https:/$()/YOUR_PROJECT.supabase.co
+SUPABASE_ANON_KEY = YOUR_PUBLIC_ANON_KEY
+IPHONEOS_DEPLOYMENT_TARGET = 17.0
+SWIFT_VERSION = 5.0
+TARGETED_DEVICE_FAMILY = 1
+CODE_SIGN_STYLE = Automatic
+// Set your own team and bundle identifier in Xcode before running on a device.

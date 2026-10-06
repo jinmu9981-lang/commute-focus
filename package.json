@@ -1,0 +1,18 @@
+{
+  "name": "commute-focus-validation",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "project": "node scripts/generate-project.mjs",
+    "test:database": "node --test scripts/database.test.mjs",
+    "check": "node scripts/check-project.mjs",
+    "check:syntax": "node --liftoff-only scripts/check-swift-syntax.mjs",
+    "test:web": "node --test scripts/web.test.mjs"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "0.3.14",
+    "jsdom": "26.1.0",
+    "tree-sitter-wasms": "0.1.13",
+    "web-tree-sitter": "0.20.8"
+  }
+}

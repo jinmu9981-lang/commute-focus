@@ -1,0 +1,78 @@
+// !$*UTF8*$!
+{ archiveVersion = 1; classes = {}; objectVersion = 56; objects = {
+64FB53BC8B4C61096B470188 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommuteFocus/App/AppStore.swift"; sourceTree = SOURCE_ROOT; };
+4E2D602A70A34DD19698C47A = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommuteFocus/App/CommuteFocusApp.swift"; sourceTree = SOURCE_ROOT; };
+96AF31A0B339E2329824A089 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommuteFocus/Core/FocusTimer.swift"; sourceTree = SOURCE_ROOT; };
+87446A98D60690A6DF42ADC1 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommuteFocus/Core/Models.swift"; sourceTree = SOURCE_ROOT; };
+2E072BFA5DAE76975EB745A0 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommuteFocus/Core/Planner.swift"; sourceTree = SOURCE_ROOT; };
+256E2558DBBB855F0352A6B9 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommuteFocus/Services/CloudService.swift"; sourceTree = SOURCE_ROOT; };
+A0F017F6A3BAA7FDB6AFC97C = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommuteFocus/Services/LocalStore.swift"; sourceTree = SOURCE_ROOT; };
+2649997D6BD59414A2E3FF3B = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommuteFocus/Services/NotificationService.swift"; sourceTree = SOURCE_ROOT; };
+011437B9D0A8DFE69D13F4CC = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommuteFocus/Views/CommuteView.swift"; sourceTree = SOURCE_ROOT; };
+9C1596DDF8F39FD2E465968E = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommuteFocus/Views/HistoryView.swift"; sourceTree = SOURCE_ROOT; };
+40CABD664E3BA5FE953908F7 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommuteFocus/Views/SettingsView.swift"; sourceTree = SOURCE_ROOT; };
+6F7A63CEF8BF3C542A5E0B94 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommuteFocus/Views/TasksView.swift"; sourceTree = SOURCE_ROOT; };
+FE73AD8484A9190CE80932FC = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommuteFocusTests/LocalStoreTests.swift"; sourceTree = SOURCE_ROOT; };
+14E6D4791B3BA8AAA3C011CB = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommuteFocusTests/PlannerTests.swift"; sourceTree = SOURCE_ROOT; };
+44E6D07A809B5A5A2F9E5C81 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommuteFocusTests/TimerTests.swift"; sourceTree = SOURCE_ROOT; };
+9FEE87CB36F83D19088F20BF = { isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CommuteFocus/PrivacyInfo.xcprivacy"; sourceTree = SOURCE_ROOT; };
+A5B58F696161C0ADED5B85B7 = { isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Config/Development.xcconfig"; sourceTree = SOURCE_ROOT; };
+035D8962FC34761A2A0ACC9B = { isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CommuteFocus/Info.plist"; sourceTree = SOURCE_ROOT; };
+42C59AF8A4BAE559BC5A5D5D = { isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "README.md"; sourceTree = SOURCE_ROOT; };
+81F31879437340D5CD6ED968 = { isa = PBXFileReference; explicitFileType = wrapper.application; path = CommuteFocus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+70F09BF32F6D77A92FF191B4 = { isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = CommuteFocusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+0A3E27B8CA818264D75C8D81 = { isa = PBXGroup; children = (81F31879437340D5CD6ED968, 70F09BF32F6D77A92FF191B4,); name = Products; sourceTree = "<group>"; };
+0D6E4079E36703EBD37C0072 = { isa = PBXGroup; children = (64FB53BC8B4C61096B470188, 4E2D602A70A34DD19698C47A, 96AF31A0B339E2329824A089, 87446A98D60690A6DF42ADC1, 2E072BFA5DAE76975EB745A0, 256E2558DBBB855F0352A6B9, A0F017F6A3BAA7FDB6AFC97C, 2649997D6BD59414A2E3FF3B, 011437B9D0A8DFE69D13F4CC, 9C1596DDF8F39FD2E465968E, 40CABD664E3BA5FE953908F7, 6F7A63CEF8BF3C542A5E0B94, FE73AD8484A9190CE80932FC, 14E6D4791B3BA8AAA3C011CB, 44E6D07A809B5A5A2F9E5C81, 9FEE87CB36F83D19088F20BF, A5B58F696161C0ADED5B85B7, 035D8962FC34761A2A0ACC9B, 42C59AF8A4BAE559BC5A5D5D, 0A3E27B8CA818264D75C8D81,); sourceTree = "<group>"; };
+AC139AF49C424A6BC2C7AB96 = { isa = PBXBuildFile; fileRef = 64FB53BC8B4C61096B470188; };
+DDFB7DD984CE83519FDA14F4 = { isa = PBXBuildFile; fileRef = 4E2D602A70A34DD19698C47A; };
+F3D0A6B002751E9F0AB771E3 = { isa = PBXBuildFile; fileRef = 96AF31A0B339E2329824A089; };
+35E077627B61671B3AA7CA42 = { isa = PBXBuildFile; fileRef = 87446A98D60690A6DF42ADC1; };
+7AC959916F2F4EA6909E45BD = { isa = PBXBuildFile; fileRef = 2E072BFA5DAE76975EB745A0; };
+2F1E66685737A57AB3A12422 = { isa = PBXBuildFile; fileRef = 256E2558DBBB855F0352A6B9; };
+8EC107CDA04CA253ECE2368C = { isa = PBXBuildFile; fileRef = A0F017F6A3BAA7FDB6AFC97C; };
+7A8B7986F2C1AFB62DCE0A65 = { isa = PBXBuildFile; fileRef = 2649997D6BD59414A2E3FF3B; };
+CBE5351774860AE9BA357429 = { isa = PBXBuildFile; fileRef = 011437B9D0A8DFE69D13F4CC; };
+1006F2F34AA21E92D07A5C54 = { isa = PBXBuildFile; fileRef = 9C1596DDF8F39FD2E465968E; };
+6327B072728E60E73D3E9771 = { isa = PBXBuildFile; fileRef = 40CABD664E3BA5FE953908F7; };
+997A6CFEECDC2465120E8B5C = { isa = PBXBuildFile; fileRef = 6F7A63CEF8BF3C542A5E0B94; };
+17655138DE091C505416ABEA = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (AC139AF49C424A6BC2C7AB96, DDFB7DD984CE83519FDA14F4, F3D0A6B002751E9F0AB771E3, 35E077627B61671B3AA7CA42, 7AC959916F2F4EA6909E45BD, 2F1E66685737A57AB3A12422, 8EC107CDA04CA253ECE2368C, 7A8B7986F2C1AFB62DCE0A65, CBE5351774860AE9BA357429, 1006F2F34AA21E92D07A5C54, 6327B072728E60E73D3E9771, 997A6CFEECDC2465120E8B5C,); runOnlyForDeploymentPostprocessing = 0; };
+D2CAFD5E90C7ABB9AC3A7DB6 = { isa = PBXBuildFile; fileRef = FE73AD8484A9190CE80932FC; };
+E6388511B8CCCBB1CCD318E4 = { isa = PBXBuildFile; fileRef = 14E6D4791B3BA8AAA3C011CB; };
+CBFB7289E92494EA8A9E8D3A = { isa = PBXBuildFile; fileRef = 44E6D07A809B5A5A2F9E5C81; };
+D7934D1E5431E43D00EE518B = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (D2CAFD5E90C7ABB9AC3A7DB6, E6388511B8CCCBB1CCD318E4, CBFB7289E92494EA8A9E8D3A,); runOnlyForDeploymentPostprocessing = 0; };
+AF3A4D721BDAA314D3C77FD7 = { isa = PBXBuildFile; fileRef = 9FEE87CB36F83D19088F20BF; };
+41D311A605520FC7B8B9A980 = { isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (AF3A4D721BDAA314D3C77FD7,); runOnlyForDeploymentPostprocessing = 0; };
+E2AA269EB967A8853A258BFA = { isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+184B519F8E1416CCE38CFFD7 = { isa = XCBuildConfiguration; baseConfigurationReference = A5B58F696161C0ADED5B85B7; buildSettings = {
+       SDKROOT = iphoneos; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; GCC_C_LANGUAGE_STANDARD = gnu17; SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+       ENABLE_TESTABILITY = YES; SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+       }; name = Debug; };
+A824290273A346217D9BE6F4 = { isa = XCBuildConfiguration; baseConfigurationReference = A5B58F696161C0ADED5B85B7; buildSettings = {
+       SDKROOT = iphoneos; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; GCC_C_LANGUAGE_STANDARD = gnu17; SWIFT_OPTIMIZATION_LEVEL = "-O";
+       SWIFT_COMPILATION_MODE = wholemodule;
+       }; name = Release; };
+1922B098E983995960BE56B0 = { isa = XCConfigurationList; buildConfigurations = (184B519F8E1416CCE38CFFD7, A824290273A346217D9BE6F4,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+0D9B6C467828201280D620A8 = { isa = XCBuildConfiguration; baseConfigurationReference = A5B58F696161C0ADED5B85B7; buildSettings = {
+       PRODUCT_BUNDLE_IDENTIFIER = com.example.CommuteFocus; PRODUCT_NAME = "$(TARGET_NAME)"; INFOPLIST_FILE = CommuteFocus/Info.plist; GENERATE_INFOPLIST_FILE = NO; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SWIFT_EMIT_LOC_STRINGS = YES; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks"; SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+       ENABLE_TESTABILITY = YES; SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+       }; name = Debug; };
+E532E4CDC1E6865CE523475E = { isa = XCBuildConfiguration; baseConfigurationReference = A5B58F696161C0ADED5B85B7; buildSettings = {
+       PRODUCT_BUNDLE_IDENTIFIER = com.example.CommuteFocus; PRODUCT_NAME = "$(TARGET_NAME)"; INFOPLIST_FILE = CommuteFocus/Info.plist; GENERATE_INFOPLIST_FILE = NO; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SWIFT_EMIT_LOC_STRINGS = YES; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks"; SWIFT_OPTIMIZATION_LEVEL = "-O";
+       SWIFT_COMPILATION_MODE = wholemodule;
+       }; name = Release; };
+7FA7C6DD60DC323C7F3FA76C = { isa = XCConfigurationList; buildConfigurations = (0D9B6C467828201280D620A8, E532E4CDC1E6865CE523475E,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+2D78CCEA355AAA4DECA10BA5 = { isa = XCBuildConfiguration; baseConfigurationReference = A5B58F696161C0ADED5B85B7; buildSettings = {
+       PRODUCT_BUNDLE_IDENTIFIER = com.example.CommuteFocusTests; PRODUCT_NAME = "$(TARGET_NAME)"; GENERATE_INFOPLIST_FILE = YES; TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CommuteFocus.app/CommuteFocus"; BUNDLE_LOADER = "$(TEST_HOST)"; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks"; SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+       ENABLE_TESTABILITY = YES; SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+       }; name = Debug; };
+F1D4FEDE61515AFDB9B202CA = { isa = XCBuildConfiguration; baseConfigurationReference = A5B58F696161C0ADED5B85B7; buildSettings = {
+       PRODUCT_BUNDLE_IDENTIFIER = com.example.CommuteFocusTests; PRODUCT_NAME = "$(TARGET_NAME)"; GENERATE_INFOPLIST_FILE = YES; TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CommuteFocus.app/CommuteFocus"; BUNDLE_LOADER = "$(TEST_HOST)"; LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks"; SWIFT_OPTIMIZATION_LEVEL = "-O";
+       SWIFT_COMPILATION_MODE = wholemodule;
+       }; name = Release; };
+3AC24B37B5C6634D049790CE = { isa = XCConfigurationList; buildConfigurations = (2D78CCEA355AAA4DECA10BA5, F1D4FEDE61515AFDB9B202CA,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+1241936D4DD3AAD68FE7BFBD = { isa = PBXContainerItemProxy; containerPortal = 244210E48437B6556980A702; proxyType = 1; remoteGlobalIDString = 8C1A045E96B998B40533C7FF; remoteInfo = CommuteFocus; };
+F26350DAFE3F19AABFD69AC4 = { isa = PBXTargetDependency; target = 8C1A045E96B998B40533C7FF; targetProxy = 1241936D4DD3AAD68FE7BFBD; };
+8C1A045E96B998B40533C7FF = { isa = PBXNativeTarget; buildConfigurationList = 7FA7C6DD60DC323C7F3FA76C; buildPhases = (17655138DE091C505416ABEA, E2AA269EB967A8853A258BFA, 41D311A605520FC7B8B9A980,); buildRules = (); dependencies = (); name = CommuteFocus; productName = CommuteFocus; productReference = 81F31879437340D5CD6ED968; productType = "com.apple.product-type.application"; };
+2ADDEE89B29C55E11126D89F = { isa = PBXNativeTarget; buildConfigurationList = 3AC24B37B5C6634D049790CE; buildPhases = (D7934D1E5431E43D00EE518B,); buildRules = (); dependencies = (F26350DAFE3F19AABFD69AC4,); name = CommuteFocusTests; productName = CommuteFocusTests; productReference = 70F09BF32F6D77A92FF191B4; productType = "com.apple.product-type.bundle.unit-test"; };
+244210E48437B6556980A702 = { isa = PBXProject; attributes = { LastUpgradeCheck = 1600; BuildIndependentTargetsInParallel = YES; TargetAttributes = { 8C1A045E96B998B40533C7FF = { CreatedOnToolsVersion = 16.0; }; 2ADDEE89B29C55E11126D89F = { CreatedOnToolsVersion = 16.0; TestTargetID = 8C1A045E96B998B40533C7FF; }; }; }; buildConfigurationList = 1922B098E983995960BE56B0; compatibilityVersion = "Xcode 14.0"; developmentRegion = "zh-Hans"; hasScannedForEncodings = 0; knownRegions = ("zh-Hans", en, Base); mainGroup = 0D6E4079E36703EBD37C0072; productRefGroup = 0A3E27B8CA818264D75C8D81; projectDirPath = ""; projectRoot = ""; targets = (8C1A045E96B998B40533C7FF, 2ADDEE89B29C55E11126D89F,); };
+}; rootObject = 244210E48437B6556980A702; }
