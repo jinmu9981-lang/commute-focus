@@ -249,7 +249,8 @@ final class AppStore: ObservableObject {
         now = Date()
         guard var commute = active else { return }
         let old = commute.timer?.phase
-        commute.timer?.reconcile(now: now, cutoff: commute.cutoff)
+        let cutoff = commute.cutoff
+        commute.timer?.reconcile(now: now, cutoff: cutoff)
         if old != commute.timer?.phase {
             active = commute
             saveActive()
