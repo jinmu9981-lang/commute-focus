@@ -1,6 +1,8 @@
 # 途间 · 通勤专注助手
 
-**想直接体验？** 仓库提供可部署到 GitHub Pages 的网页版本：任务编辑、通勤排程、专注计时和进度记录都可以在浏览器操作。发布步骤见 [GitHub 分享指南](docs/GITHUB.md)。目前尚未连接 GitHub 完成部署，因此暂时没有公开在线地址。
+**[点这里直接使用网页版](https://jinmu9981-lang.github.io/commute-focus/)** · [查看 GitHub 源码](https://github.com/jinmu9981-lang/commute-focus)
+
+无需安装：任务编辑、通勤排程、专注计时和进度记录都可以在浏览器操作。自己的任务保存在自己的浏览器中。想发布自己的副本，见 [GitHub 分享指南](docs/GITHUB.md)。
 
 网页版本的数据只保存在当前浏览器，不提供账号同步和锁屏通知；iPhone 原生源码提供相应实现，仍需 Xcode 验证及云端配置。
 

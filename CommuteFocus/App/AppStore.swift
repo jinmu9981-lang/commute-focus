@@ -67,7 +67,7 @@ final class AppStore: ObservableObject {
 
     func perform(_ operation: () throws -> Void) {
         do { try local.transaction(operation); reload(); requestSync() }
-        catch { error = "保存失败：\(error.localizedDescription)"; reload() }
+        catch { self.error = "保存失败：\(error.localizedDescription)"; reload() }
     }
     func saveTask(_ task: WorkTask) { perform { try local.put(task, id: task.id, kind: .task, owner: owner) } }
     func saveStep(_ step: WorkStep) { perform { try local.put(step, id: step.id, kind: .step, owner: owner) } }

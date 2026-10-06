@@ -54,4 +54,6 @@
 - 已添加 `docs/index.html` 独立网页，使用 GitHub Pages 的 main 分支 /docs 目录发布；网页依靠浏览器本地存储保留任务与体验进度。
 - 已添加网页交互回归测试及 GitHub Actions 检查流程，其中原生 XCTest 需要上传后的 macOS runner 执行。
 - `npm run test:web` 已通过 5 项测试：完整计时流程、状态回传时编辑器保持、浏览器会话恢复、用户文本转义、发布文件与源文件一致。
-- GitHub 仓库创建、源码上传、Pages 部署及线上地址验证尚未完成，需先连接 GitHub 账号。
+- GitHub 仓库已创建并上传：[jinmu9981-lang/commute-focus](https://github.com/jinmu9981-lang/commute-focus)。
+- GitHub Pages 已成功部署：[在线体验](https://jinmu9981-lang.github.io/commute-focus/)。已确认公共网页返回 HTTP 200，浏览器可渲染首页。
+- 初次云端 Xcode 检查发现 `AppStore.perform` 的 catch 局部变量遮蔽错误提示属性，已改为 `self.error`，正在重新运行原生检查。

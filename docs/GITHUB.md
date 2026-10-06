@@ -2,6 +2,8 @@
 
 这个仓库包含两种使用方式：
 
+**直接使用：[途间网页体验版](https://jinmu9981-lang.github.io/commute-focus/)**
+
 | 版本 | 使用方法 | 已有能力 |
 |---|---|---|
 | 网页体验版 | 打开 GitHub Pages 链接 | 编辑任务、自动排程、前台计时、进度记录；数据保存在各自浏览器 |
@@ -38,7 +40,7 @@
 
 ## 给开发者的说明
 
-原生工程和 Supabase 部署见仓库 README。GitHub Actions 的 Project checks 会检查网页交互、数据库规则，并尝试在 macOS Xcode 环境运行原生 XCTest。上传前尚未在 Xcode 编译，不应把“已有代码”当作原生构建成功。
+原生工程和 Supabase 部署见仓库 README。GitHub Actions 的 Project checks 检查网页交互和数据库规则；iPhone build and tests 在 macOS Xcode 环境运行原生 XCTest。最新验证结果见 [验证记录](VALIDATION.md)。
 
 网页源文件为 `web/commute-experience.html`，发布文件为 `docs/index.html`。生成的发布文件可以直接托管，不需要线上安装 Node、Python 或配置数据库。
 
