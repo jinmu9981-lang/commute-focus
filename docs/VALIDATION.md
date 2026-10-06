@@ -6,7 +6,7 @@
 
 - macOS，有 Node.js。
 - `xcodebuild -version` 和 `swift --version` 均报告未安装开发工具；没有 Xcode、iOS Simulator、签名团队或已配置 Supabase 项目。
-- 因此尚不能确认 Swift 类型检查、链接或 iPhone 实际运行成功。
+- 原生编译和模拟器测试通过 GitHub Actions 的 macOS 15 / Xcode 16.4 环境执行；本机工具链限制不影响云端验证。
 
 ## 自动验证
 
@@ -16,12 +16,15 @@
 | `npm run check` | 通过：15 个 Swift 文件全部接入、57 个 PBX 对象引用完整、Info/Privacy/PBX plist 格式合法 |
 | `npm run check:syntax` | 通过：15 个 Swift 文件的 Tree-sitter 语法检查；不含 `#Predicate` 宏展开、类型检查、Apple SDK 校验 |
 | `npm run test:database` | 通过：5 个测试，涵盖 RLS 隔离、伪造 owner 防护、幂等重试、永久删除、历史不可变、事务回滚、匿名拒绝 |
-| Swift XCTest | 未运行：缺少 Swift/Xcode 工具链 |
-| 模拟器、真机与真实云服务 | 未运行：缺少 Xcode、签名与云项目配置 |
+| Swift 编译与链接 | 已在 GitHub Actions 的 Xcode 16.4 环境通过 |
+| Swift XCTest | 通过：iPhone 模拟器执行 19 项测试，0 失败；排程 8 项、计时 5 项、本地存储 6 项 |
+| 真机与真实云服务 | 未运行：缺少签名与云项目配置 |
 
 数据库测试初次暴露重复操作分支中的 SQL 局部变量与字段同名歧义，已修复并重新通过。语法检查使用 `--liftoff-only` 避免本机 Node 24 WebAssembly 优化器崩溃；语法解析器较旧，检查时仅将 `#Predicate` 按普通标识符解析，宏仍须由 Xcode 编译验证。
 
-## 安装 Xcode 后执行
+原生验证对应源码提交 `81428bd`：[Xcode 编译与 19 项 XCTest 成功记录](https://github.com/jinmu9981-lang/commute-focus/actions/runs/37429116623)。后续提交仅更新交付说明。该运行包含实际 Apple SDK 编译及 `#Predicate` 宏展开，不仅是语法解析。
+
+## 本地复验与界面检查
 
 - 运行 `CommuteFocusTests`，涵盖 10/25/35/60/90 分钟任务、1–180 分钟工作量与预算组合、优先级与排序、步骤合并、零剩余估算阻塞、跨通勤续做、暂停与到站、重启恢复、账号隔离、旧回执保护和事务回滚。
 - 在小屏 iPhone 和大字体模式检查任务表单、倒计时、确认面板是否溢出。
@@ -49,11 +52,11 @@
 
 第一版只使用普通本地通知，不申请突破系统静音/专注模式的关键警报权限，也不依赖后台持续执行计时循环。
 
-## GitHub 发布准备
+## GitHub 发布
 
 - 已添加 `docs/index.html` 独立网页，使用 GitHub Pages 的 main 分支 /docs 目录发布；网页依靠浏览器本地存储保留任务与体验进度。
-- 已添加网页交互回归测试及 GitHub Actions 检查流程，其中原生 XCTest 需要上传后的 macOS runner 执行。
+- 已添加网页交互回归测试及 GitHub Actions 检查流程，原生 XCTest 由 macOS runner 执行。
 - `npm run test:web` 已通过 5 项测试：完整计时流程、状态回传时编辑器保持、浏览器会话恢复、用户文本转义、发布文件与源文件一致。
 - GitHub 仓库已创建并上传：[jinmu9981-lang/commute-focus](https://github.com/jinmu9981-lang/commute-focus)。
 - GitHub Pages 已成功部署：[在线体验](https://jinmu9981-lang.github.io/commute-focus/)。已确认公共网页返回 HTTP 200，浏览器可渲染首页。
-- 初次云端 Xcode 检查发现 `AppStore.perform` 的 catch 局部变量遮蔽错误提示属性，已改为 `self.error`，正在重新运行原生检查。
+- 云端检查发现并修复了错误提示属性遮蔽、计时状态的重叠访问、SwiftData 容器生命周期和删除标记持久化问题。删除测试另覆盖新上下文重新读取后的结果。
