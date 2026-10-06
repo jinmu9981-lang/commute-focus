@@ -70,8 +70,13 @@ enum JSONValue: Codable {
 @MainActor
 final class LocalStore {
     let context: ModelContext
+    // Keep storage alive even when the caller only retains this store.
+    private let container: ModelContainer
     private var batching = false
-    init(context: ModelContext) { self.context = context }
+    init(context: ModelContext) {
+        self.context = context
+        self.container = context.container
+    }
 
     func transaction(_ body: () throws -> Void) throws {
         batching = true
