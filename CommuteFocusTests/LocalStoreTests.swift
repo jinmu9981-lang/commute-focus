@@ -54,6 +54,16 @@ final class LocalStoreTests: XCTestCase {
         })
         XCTAssertTrue(try store.values(WorkTask.self, kind: .task, owner: "A").isEmpty)
     }
+    func testLocalDeletionSurvivesRefetchAndQueuesTombstone() throws {
+        let store = try makeStore()
+        let task = WorkTask(title: "删除后保持隐藏")
+        try store.put(task, id: task.id, kind: .task, owner: "A")
+        try store.delete(id: task.id, owner: "A")
+        let reopened = LocalStore(context: ModelContext(store.context.container))
+        XCTAssertTrue(try reopened.values(WorkTask.self, kind: .task, owner: "A").isEmpty)
+        XCTAssertEqual(try reopened.pending(owner: "A").first?.deleted, true)
+        XCTAssertEqual(try reopened.rows(owner: "A").count, 1)
+    }
     func testFocusLogUsesStableSegmentIdentity() throws {
         let store = try makeStore()
         let log = FocusLog(id: UUID(), journeyID: UUID(), taskID: UUID(), taskTitle: "任务",

@@ -8,7 +8,7 @@ final class LocalRecord {
     var recordID: UUID
     var kind: String
     var payload: Data
-    var deleted: Bool
+    var tombstoned: Bool
     var dirty: Bool
     var mutationID: UUID
     var revision: Int64
@@ -19,7 +19,7 @@ final class LocalRecord {
         recordID = id
         self.kind = kind.rawValue
         self.payload = payload
-        self.deleted = deleted
+        self.tombstoned = deleted
         dirty = true
         mutationID = UUID()
         revision = 0
@@ -95,7 +95,7 @@ final class LocalStore {
     }
 
     func values<T: Decodable>(_ type: T.Type, kind: RecordKind, owner: String) throws -> [T] {
-        try rows(owner: owner).filter { $0.kind == kind.rawValue && !$0.deleted }.map {
+        try rows(owner: owner).filter { $0.kind == kind.rawValue && !$0.tombstoned }.map {
             try JSONDecoder().decode(type, from: $0.payload)
         }
     }
@@ -103,7 +103,7 @@ final class LocalStore {
     func put<T: Encodable>(_ value: T, id: UUID, kind: RecordKind, owner: String) throws {
         let data = try JSONEncoder().encode(value)
         if let row = try rows(owner: owner).first(where: { $0.recordID == id }) {
-            guard !row.deleted else { return } // Tombstones cannot be resurrected.
+            guard !row.tombstoned else { return } // Tombstones cannot be resurrected.
             row.payload = data
             row.dirty = true
             row.mutationID = UUID()
@@ -115,7 +115,7 @@ final class LocalStore {
 
     func delete(id: UUID, owner: String) throws {
         guard let row = try rows(owner: owner).first(where: { $0.recordID == id }) else { return }
-        row.deleted = true
+        row.tombstoned = true
         row.dirty = true
         row.mutationID = UUID()
         if !batching { try context.save() }
@@ -125,7 +125,7 @@ final class LocalStore {
         try rows(owner: owner).filter(\.dirty).map {
             UploadRecord(id: $0.recordID, kind: $0.kind,
                          payload: try JSONDecoder().decode(JSONValue.self, from: $0.payload),
-                         deleted: $0.deleted, mutation_id: $0.mutationID)
+                         deleted: $0.tombstoned, mutation_id: $0.mutationID)
         }
     }
 
@@ -139,7 +139,7 @@ final class LocalStore {
                 guard incoming.deleted || !row.dirty || acknowledgesCurrent else { continue }
                 guard incoming.revision >= row.revision else { continue }
                 row.payload = payload
-                row.deleted = incoming.deleted
+                row.tombstoned = incoming.deleted
                 row.revision = incoming.revision
                 row.dirty = false
             } else {
